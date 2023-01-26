@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Netflix-Bold' ;
+  src: url(../font/NetflixSans-Bold.ttf) format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Netflix-Medium' ;
+  src: url(../font/NetflixSans-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Netflix-Regular' ;
+  src: url(../font/NetflixSans-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Netflix-Light' ;
+  src: url(../font/NetflixSans-Light.ttf) format('truetype');
+  font-weight: 300
+}
+
+@import './base.css';
+
+
+body{
+  background-color: #141414;
+  font-family: 'Netflix-Bold';
+}
+
+#app {
+  font-weight: normal;
+  max-width: 1880px;
+  display: block;
+  margin: 0 auto;
+}
+
+
