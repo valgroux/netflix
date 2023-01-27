@@ -1,19 +1,22 @@
 <template>
     <section class="likes">
         <h2>Appréciés sur Netflix</h2>
-
-        <Swiper
+        <div class="likes__container">
+            <Swiper
         :slides-per-view="4"
         :space-between="24"
+        :loop="true"
+        :mousewheel="true"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
         >
 
-        <swiper-slide v-for="movie in limitedMovies" :key="movie.id" class="likes__movies-content">
-            <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Image du film">
-        </swiper-slide>
+            <swiper-slide v-for="movie in limitedMovies" :key="movie.id" class="likes__movies-content">
+                <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Image du film">
+            </swiper-slide>
 
-        </Swiper>
+            </Swiper>
+        </div>
 
         <!-- <div class="likes__movies">
             <div v-for="movie in limitedMovies" :key="movie.id" class="likes__movies-content">
@@ -83,9 +86,13 @@ export default {
         color:#fff;
         font-family: 'NetflixSans-Medium';
     }
+
+    .likes__container{
+        margin: 48px;
+    }
     .likes__movies-content{
-        width: 300px;
-        height: 200px;
+        width: 452px;
+        height: 678px;
         overflow: hidden;
     }
 

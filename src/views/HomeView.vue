@@ -15,7 +15,7 @@ import MoovieLikes from '@/components/MoovieLikes.vue'
 export default {
   components: {
     MoovieLikes,
-  }
+  },
 }
 
 </script>
