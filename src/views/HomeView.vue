@@ -2,7 +2,7 @@
   <div class="masthead">
     <h1>The Dark Knight</h1>
     <p>Batman, le lieutenant Gordon et le procureur Harvey Dent s'allient contre le Joker, le génie du crime au maquillage macabre qui terrorise Gotham City.</p>
-    <img src="@/assets/svg/play.svg">
+    <img class="playvideo" src="@/assets/svg/play.svg">
   </div>
 
   <MoovieLikes />
