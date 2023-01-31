@@ -18,19 +18,13 @@
             </Swiper>
         </div>
 
-        <!-- <div class="likes__movies">
-            <div v-for="movie in limitedMovies" :key="movie.id" class="likes__movies-content">
-                <img :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="Image du film">
-            </div>
-        </div> -->
-
     </section>
 </template>
 
 <script>
-import axios from 'axios';
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css'
+import {getPopularMovies} from '../services/LikesMoovieServices.js'
 
 export default {
     components: {
@@ -46,10 +40,10 @@ export default {
     },
     setup(){
         const onSwiper = (swiper) => {
-            console.log(swiper);
+            
         };
         const onSlideChange = () => {
-            console.log('Slide change');
+            
         }
         return {
             onSwiper,
@@ -57,22 +51,10 @@ export default {
         }
     },
     created(){
-        axios.get('https://api.themoviedb.org/3/movie/popular', {
-            params: {
-                api_key: 'bb8707cd4517d45507a596bcac3064a4'
-            }
-        })
-        .then(response => {
-            this.movies = response.data.results
+        getPopularMovies().then(movies => {
+            this.movies = movies
             this.limitedMovies = this.movies.slice(0,8)
         })
-        .catch(error => {
-            console.log(error)
-        })
-
-    },  
-    mounted(){
-        
     }
 }
 

@@ -12,6 +12,7 @@
     "swiper": "^8.4.6",
     "vue": "^3.2.45",
     "vue-awesome-swiper": "^5.0.1",
+    "vue-background-video": "^0.0.1",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
