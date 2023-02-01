@@ -2,10 +2,10 @@
   <div class="masthead">
     <h1>The Dark Knight</h1>
     <p>Batman, le lieutenant Gordon et le procureur Harvey Dent s'allient contre le Joker, le génie du crime au maquillage macabre qui terrorise Gotham City.</p>
-    <video id="background-video" autoplay loop ref="video">
+    <video id="background-video" autoplay loop muted ref="video" poster="@/assets/img/batman.jpeg" alt="Bande annonce du film The Dark Knight">
       <source src="@/assets/video/batman.mp4" type="video/mp4">
     </video>
-    <img class="playvideo" src="@/assets/svg/play.svg">
+    <img class="playvideo" src="@/assets/svg/play.svg" alt="Bouton play pour lancer le film">
   </div>
   <section class="section__movie">
     <h2>Appréciés sur Netflix</h2>
@@ -26,6 +26,7 @@
 
 
 <script>
+
 import MoovieLikes from '@/components/MoovieLikes.vue'
 import MoovieKids from '@/components/MoovieKids.vue'
 import MoovieBest from '@/components/MoovieBest.vue'
@@ -36,7 +37,26 @@ export default {
     MoovieKids,
     MoovieBest
   },
+  data(){
+    return {
+      playVideo: true
+    }
+  },
+  mounted(){
+    const videoEl = this.$refs.video
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          this.playVideo = true;
+        } else {
+          this.playVideo = false
+        }
+      })
+    })
+    observer.observe(videoEl);
+  }
 }
+
 </script>
 
 <style scoped>
