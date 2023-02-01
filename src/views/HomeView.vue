@@ -2,39 +2,62 @@
   <div class="masthead">
     <h1>The Dark Knight</h1>
     <p>Batman, le lieutenant Gordon et le procureur Harvey Dent s'allient contre le Joker, le génie du crime au maquillage macabre qui terrorise Gotham City.</p>
-    <img class="playvideo" src="@/assets/svg/play.svg" @mouseover="playVideo">
-
-
+    <video id="background-video" autoplay loop ref="video">
+      <source src="@/assets/video/batman.mp4" type="video/mp4">
+    </video>
+    <img class="playvideo" src="@/assets/svg/play.svg">
   </div>
+  <section class="section__movie">
+    <h2>Appréciés sur Netflix</h2>
+    <MoovieLikes />
+  </section>
 
-  <MoovieLikes />
+  <section class="section__movie">
+    <h2>Notre sélection pour vous</h2>
+    <MoovieKids />
+  </section>
+
+  <section class="section__movie">
+    <h2>Les films de l'année</h2>
+    <MoovieBest />
+  </section>
 
 </template>
 
 
 <script>
 import MoovieLikes from '@/components/MoovieLikes.vue'
-import 'swiper/css'
-
+import MoovieKids from '@/components/MoovieKids.vue'
+import MoovieBest from '@/components/MoovieBest.vue'
 
 export default {
   components: {
     MoovieLikes,
+    MoovieKids,
+    MoovieBest
   },
 }
-
 </script>
-
 
 <style scoped>
 
 .masthead{
+  position: relative;
   padding-top: 400px;
   padding-bottom: 100px;
-  background-image:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1727284663865546) 100%), url('../assets/img/batman.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 20%;
+}
+
+.masthead video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .masthead h1{
@@ -57,6 +80,17 @@ export default {
   width: 64px;
   margin: 24px 48px;
   cursor: pointer;
+}
+
+.section__movie{
+  margin: 80px 0;
+}
+
+.section__movie h2 {
+  font-size: 32px;
+  margin: 48px;
+  color:#fff;
+  font-family: 'NetflixSans-Medium';
 }
 
 </style>

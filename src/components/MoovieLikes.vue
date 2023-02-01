@@ -1,6 +1,4 @@
 <template>
-    <section class="likes">
-        <h2>Appréciés sur Netflix</h2>
         <div class="likes__container">
             <Swiper
         :slides-per-view="4"
@@ -18,18 +16,22 @@
             </Swiper>
         </div>
 
-    </section>
 </template>
 
 <script>
+// Import Swiper Vue.js components
 import {Swiper, SwiperSlide} from 'swiper/vue';
+
+// Import Swiper styles
 import 'swiper/css'
+
+// Import API Call
 import {getPopularMovies} from '../services/LikesMoovieServices.js'
 
 export default {
     components: {
         Swiper,
-        SwiperSlide
+        SwiperSlide,
     },
     name: 'MoovieLikes',
     data(){
@@ -40,10 +42,8 @@ export default {
     },
     setup(){
         const onSwiper = (swiper) => {
-            
         };
         const onSlideChange = () => {
-            
         }
         return {
             onSwiper,
@@ -61,13 +61,6 @@ export default {
 </script>
 
 <style scoped>
-
-    .likes h2 {
-        font-size: 32px;
-        margin: 48px;
-        color:#fff;
-        font-family: 'NetflixSans-Medium';
-    }
 
     .likes__container{
         margin: 48px;
