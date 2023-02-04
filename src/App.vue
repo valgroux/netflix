@@ -95,9 +95,17 @@ nav a:hover{
   z-index: 2;
 }
 
-/* .test{
-  background-color: red;
-  height: 4000px;
-} */
+/* RESPONSIVE 425 */
+@media only screen and (max-width: 700px) {
+
+.header__menu{
+    display: none;
+}
+.header__logo{
+  margin: 0 auto;
+}
+
+}
+
 
 </style>

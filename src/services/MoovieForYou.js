@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getKidsMovies = async () => {
+export const getMoovieForYou = async () => {
     try {
         const response = await axios
             .get('https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc', {

@@ -9,17 +9,17 @@
   </div>
   <section class="section__movie">
     <h2>Appréciés sur Netflix</h2>
-    <MoovieLikes />
+    <MoovieAppreciate />
   </section>
 
   <section class="section__movie">
     <h2>Notre sélection pour vous</h2>
-    <MoovieKids />
+    <MoovieForYou />
   </section>
 
   <section class="section__movie">
     <h2>Les films de l'année</h2>
-    <MoovieBest />
+    <MoovieOfYear />
   </section>
 
 </template>
@@ -27,15 +27,15 @@
 
 <script>
 
-import MoovieLikes from '@/components/MoovieLikes.vue'
-import MoovieKids from '@/components/MoovieKids.vue'
-import MoovieBest from '@/components/MoovieBest.vue'
+import MoovieAppreciate from '@/components/MoovieAppreciate.vue'
+import MoovieForYou from '@/components/MoovieForYou.vue'
+import MoovieOfYear from '@/components/MoovieOfYear.vue'
 
 export default {
   components: {
-    MoovieLikes,
-    MoovieKids,
-    MoovieBest
+    MoovieAppreciate,
+    MoovieForYou,
+    MoovieOfYear
   },
   data(){
     return {
@@ -103,7 +103,8 @@ export default {
 }
 
 .section__movie{
-  margin: 80px 0;
+  margin: 56px 0;
+  overflow: visible;
 }
 
 .section__movie h2 {
@@ -111,6 +112,16 @@ export default {
   margin: 48px;
   color:#fff;
   font-family: 'NetflixSans-Medium';
+}
+
+/* RESPONSIVE 840PX */
+@media only screen and (max-width: 840px) {
+  .masthead{
+    padding-top: 100px;
+  }
+  .masthead p {
+    width: 80%;
+  }
 }
 
 </style>
